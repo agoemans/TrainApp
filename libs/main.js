@@ -18,4 +18,11 @@ module.exports = function(app, express, path)
 		getJSON(req,res);
 	});
 
+	/* Test DB connection -- to be used*/
+	app.get('/dbtest', function(req, res) {
+		var textCleanUp = require('./texthelper.js');
+		//res.send(textCleanUp.fixDate());
+		res.send(textCleanUp.sliceLocation());
+	});
+
 }
